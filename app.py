@@ -8,7 +8,7 @@ from datetime import datetime
 import datetime as dt
 from dateutil.parser import parse
 import mysql.connector
-from .menu import Menu
+from menu import Menu
 app = Flask(__name__)
 
 username = "sandbox"
@@ -16,15 +16,7 @@ api_key = "0f54c06969af94baa76c50efbcc1daaecb9b75f254d3388c85edfd9d21ff7ad0"
 africastalking.initialize(username, api_key)
 
 sms = africastalking.SMS
-db = mysql.connector.connect(
-    
-        host = "137.184.54.169",
-        user = "kaguius",
-        passwd = "U6xZfLn9A7Swc%P9",
-        database = "finabora",
-        autocommit = True,
-        port ="3306",
-    )
+
     
 @app.route('/', methods=['POST', 'GET'])
 
@@ -40,21 +32,6 @@ class Airtime(Menu):
         if user_response == "":     
             return self.home()
 
-            
-        
-        
-    
-
-         
-        
-    
-    
-
-
-    
-
-
-    
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=os.environ.get("PORT"))
