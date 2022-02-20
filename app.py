@@ -1,3 +1,4 @@
+from ast import Return
 from flask import Flask, request
 import africastalking
 import os
@@ -29,9 +30,11 @@ def Callback():
         
         
 
-    if user_response == "":     
+    if user_response == "": 
+        input = Menu.home()   
         
-        return Menu.home()
+        return input
+    return
 
         
 if __name__ == "__main__":
