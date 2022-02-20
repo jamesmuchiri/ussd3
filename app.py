@@ -1,7 +1,6 @@
 from flask import Flask, request
 import africastalking
 import os
-import variables
 import re
 import maya
 from maya import MayaInterval
