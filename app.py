@@ -20,18 +20,19 @@ sms = africastalking.SMS
     
 @app.route('/', methods=['POST', 'GET'])
 
-class Airtime(Menu):
-    def Callback(self):
-        phone_number = request.values.get("phoneNumber","default")
-        text = request.values.get("text","default")
-        text_array = text.split("*")
-        user_response = text_array[len(text_array) - 1]
+
+def Callback():
+    phone_number = request.values.get("phoneNumber","default")
+    text = request.values.get("text","default")
+    text_array = text.split("*")
+    user_response = text_array[len(text_array) - 1]
         
         
 
-        if user_response == "":     
-            return self.home()
+    if user_response == "":     
+        
+        return Menu.home()
 
-
+        
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=os.environ.get("PORT"))
