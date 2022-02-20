@@ -66,7 +66,7 @@ def home():
                     ).format(Good_Evening)
     return ussd_proceed(menu_text)
 
-def Callback(menu_text):
+def Callback():
     phone_number = request.values.get("phoneNumber","default")
     text = request.values.get("text","default")
     text_array = text.split("*")
@@ -77,7 +77,7 @@ def Callback(menu_text):
     if user_response == "":
         return home()
         
-    return ussd_proceed(menu_text)    
+    return user_response  
 
         
 if __name__ == "__main__":
