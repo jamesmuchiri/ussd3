@@ -2,8 +2,7 @@ import json
 
 from flask import make_response
 
-from .time import kenya_time
-
+import datetime
 #from ..database import redis
 
 class Menu(object):
@@ -31,6 +30,8 @@ class Menu(object):
 
     def home(self):
         """serves the home menu"""
+
+        kenya_time = datetime.datetime.utcnow() + datetime.timedelta(hours=3)
         if 5<= kenya_time <12 :
             Good_Morning="Good Morning"
             menu_text =("CON {}"
