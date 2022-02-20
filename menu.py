@@ -6,11 +6,6 @@ import datetime
 #from ..database import redis
 
 class Menu(object):
-    def __init__(self,user_response, phone_number=None):
-        self.user_response = user_response
-        self.phone_number = phone_number
-        
-
     def execute(self):
         raise NotImplementedError
 
