@@ -23,37 +23,5 @@ class Menu(object):
         response.headers['Content-Type'] = "text/plain"
         return response
 
-    def home(self):
-        """serves the home menu"""
-
-        kenya_time = datetime.datetime.utcnow() + datetime.timedelta(hours=3)
-        if 5<= kenya_time <12 :
-            Good_Morning="Good Morning"
-            menu_text =("CON {}"
-                        "\nHow may i help you"
-                        "\n  -Limit "
-                        "\n  -Balance"
-                        "\n  -Loan"
-                        "\n  -Amount"
-            ).format(Good_Morning)
-        elif  12 <= kenya_time < 17 :
-            Good_Afternoon="Good Afternoon"
-            menu_text =("CON {}"
-                        "\nHow may i help you"
-                        "\n  -Limit "
-                        "\n  -Balance"
-                        "\n  -Loan"
-                         "\n  -Amount"
-                    ).format(Good_Afternoon)
-        else:
-            Good_Evening="Good Evening"
-            menu_text =("CON {}"
-                        "\nHow may i help you"
-                        "\n  -Limit "
-                        "\n  -Balance"
-                        "\n  -Loan"
-                        "\n  -Amount"
-                    ).format(Good_Evening)
-
-        # print the response on to the page so that our gateway can read it
-        return self.ussd_proceed(menu_text)
+    
+   
